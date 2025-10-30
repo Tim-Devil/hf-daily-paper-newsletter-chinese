@@ -49,6 +49,159 @@ class NewsletterGenerator:
 ## 📱 订阅渠道
 - GitHub: [hf-daily-paper-newsletter-chinese](https://github.com/2404589803/hf-daily-paper-newsletter-chinese)
 """
+        
+        # HTML模板,包含响应式CSS样式
+        self.html_template = """<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - {{ date }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {{ content }}
+    </div>
+</body>
+</html>
+"""
 
     def extract_paper_info(self, paper_data):
         """从论文数据中提取关键信息"""
@@ -58,14 +211,14 @@ class NewsletterGenerator:
         title_match = re.search(r"标题[:：]\s*([^\n]+)(?=\s*\n\s*摘要[:：]|\Z)", translation, re.DOTALL)
         summary_match = re.search(r"摘要[:：]\s*([^\n].+?)(?=\s*(?:\n\s*[^：\n]+[:：]|\Z))", translation, re.DOTALL)
         
-        # 如果匹配失败，尝试使用备用模式
+        # 如果匹配失败,尝试使用备用模式
         if not title_match:
             title_match = re.search(r"^([^\n]+)\n\s*摘要[:：]", translation, re.MULTILINE)
         
         title = (title_match.group(1) if title_match else paper_data.get('title', '')).strip()
         summary = (summary_match.group(1) if summary_match else '').strip()
         
-        # 如果摘要为空，尝试获取剩余的所有文本作为摘要
+        # 如果摘要为空,尝试获取剩余的所有文本作为摘要
         if not summary and '摘要：' in translation:
             summary = translation.split('摘要：', 1)[1].strip()
         
@@ -92,6 +245,17 @@ class NewsletterGenerator:
                     topics.append(keyword)
         return ', '.join(topics) if topics else '综合领域'
 
+    def generate_html(self, markdown_content, date_str):
+        """将Markdown转换为带样式的HTML"""
+        # 先将markdown转换为HTML
+        html_content = markdown.markdown(markdown_content)
+        
+        # 使用HTML模板包装内容
+        template = Template(self.html_template)
+        full_html = template.render(content=html_content, date=date_str)
+        
+        return full_html
+
     def generate_newsletter(self, date_str=None):
         """生成每日论文简报"""
         if not date_str:
@@ -109,7 +273,7 @@ class NewsletterGenerator:
                 
             # 检查是否有有效数据
             if not isinstance(papers_data, list) or len(papers_data) == 0:
-                logger.info(f"{date_str} 没有论文数据，跳过生成日报")
+                logger.info(f"{date_str} 没有论文数据,跳过生成日报")
                 return False
                 
             # 处理论文信息
@@ -121,7 +285,7 @@ class NewsletterGenerator:
             # 检查是否存在统计数据
             stats_file = os.path.join('stats', 'stats_report.json')
             if not os.path.exists(stats_file):
-                logger.warning("未找到统计数据文件，将使用简化版模板")
+                logger.warning("未找到统计数据文件,将使用简化版模板")
                 template_data = {
                     'date': date_str,
                     'total_papers': len(papers),
@@ -147,8 +311,8 @@ class NewsletterGenerator:
             template = Template(self.template)
             newsletter_md = template.render(**template_data)
             
-            # 转换为HTML
-            newsletter_html = markdown.markdown(newsletter_md)
+            # 转换为HTML并添加样式
+            newsletter_html = self.generate_html(newsletter_md, date_str)
             
             # 保存文件
             output_dir = 'newsletters'  # 日报保存在 newsletters 目录
@@ -182,4 +346,4 @@ if __name__ == "__main__":
     success = generator.generate_newsletter(args.date)
     if not success:
         exit(1)
-    exit(0) 
+    exit(0)
