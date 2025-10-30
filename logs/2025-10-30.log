@@ -1,0 +1,95 @@
+2025-10-30 05:12:36,832 - INFO - 正在处理 2025-10-30 的论文数据
+2025-10-30 05:12:36,833 - INFO - 读取到 16 篇论文数据
+2025-10-30 05:12:36,833 - INFO - 正在处理第 1/16 篇论文
+2025-10-30 05:12:36,833 - INFO - 正在翻译第 1 篇论文 (尝试 1/3)
+2025-10-30 05:12:36,834 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:12:37,417 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:12:48,360 - INFO - 第 1 篇论文处理成功
+2025-10-30 05:12:51,360 - INFO - 正在处理第 2/16 篇论文
+2025-10-30 05:12:51,360 - INFO - 正在翻译第 2 篇论文 (尝试 1/3)
+2025-10-30 05:12:51,360 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:12:51,674 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:13:06,141 - INFO - 第 2 篇论文处理成功
+2025-10-30 05:13:09,141 - INFO - 正在处理第 3/16 篇论文
+2025-10-30 05:13:09,141 - INFO - 正在翻译第 3 篇论文 (尝试 1/3)
+2025-10-30 05:13:09,142 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:13:09,451 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:13:24,511 - INFO - 第 3 篇论文处理成功
+2025-10-30 05:13:27,511 - INFO - 正在处理第 4/16 篇论文
+2025-10-30 05:13:27,511 - INFO - 正在翻译第 4 篇论文 (尝试 1/3)
+2025-10-30 05:13:27,512 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:13:27,798 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:13:38,039 - INFO - 第 4 篇论文处理成功
+2025-10-30 05:13:41,039 - INFO - 正在处理第 5/16 篇论文
+2025-10-30 05:13:41,040 - INFO - 正在翻译第 5 篇论文 (尝试 1/3)
+2025-10-30 05:13:41,040 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:13:41,356 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:13:57,820 - INFO - 第 5 篇论文处理成功
+2025-10-30 05:14:00,820 - INFO - 正在处理第 6/16 篇论文
+2025-10-30 05:14:00,821 - INFO - 正在翻译第 6 篇论文 (尝试 1/3)
+2025-10-30 05:14:00,821 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:14:01,117 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:14:08,410 - INFO - 第 6 篇论文处理成功
+2025-10-30 05:14:11,411 - INFO - 正在处理第 7/16 篇论文
+2025-10-30 05:14:11,411 - INFO - 正在翻译第 7 篇论文 (尝试 1/3)
+2025-10-30 05:14:11,411 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:14:11,700 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:14:23,634 - INFO - 第 7 篇论文处理成功
+2025-10-30 05:14:26,634 - INFO - 正在处理第 8/16 篇论文
+2025-10-30 05:14:26,634 - INFO - 正在翻译第 8 篇论文 (尝试 1/3)
+2025-10-30 05:14:26,634 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:14:26,926 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:14:39,981 - INFO - 第 8 篇论文处理成功
+2025-10-30 05:14:42,981 - INFO - 正在处理第 9/16 篇论文
+2025-10-30 05:14:42,982 - INFO - 正在翻译第 9 篇论文 (尝试 1/3)
+2025-10-30 05:14:42,982 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:14:43,270 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:14:56,648 - INFO - 第 9 篇论文处理成功
+2025-10-30 05:14:59,648 - INFO - 正在处理第 10/16 篇论文
+2025-10-30 05:14:59,648 - INFO - 正在翻译第 10 篇论文 (尝试 1/3)
+2025-10-30 05:14:59,648 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:14:59,927 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:15:10,485 - INFO - 第 10 篇论文处理成功
+2025-10-30 05:15:13,486 - INFO - 正在处理第 11/16 篇论文
+2025-10-30 05:15:13,486 - INFO - 正在翻译第 11 篇论文 (尝试 1/3)
+2025-10-30 05:15:13,486 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:15:13,771 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:15:26,444 - INFO - 第 11 篇论文处理成功
+2025-10-30 05:15:29,444 - INFO - 正在处理第 12/16 篇论文
+2025-10-30 05:15:29,444 - INFO - 正在翻译第 12 篇论文 (尝试 1/3)
+2025-10-30 05:15:29,444 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:15:29,722 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:15:41,657 - INFO - 第 12 篇论文处理成功
+2025-10-30 05:15:44,657 - INFO - 正在处理第 13/16 篇论文
+2025-10-30 05:15:44,657 - INFO - 正在翻译第 13 篇论文 (尝试 1/3)
+2025-10-30 05:15:44,657 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:15:44,937 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:15:59,724 - INFO - 第 13 篇论文处理成功
+2025-10-30 05:16:02,724 - INFO - 正在处理第 14/16 篇论文
+2025-10-30 05:16:02,724 - INFO - 正在翻译第 14 篇论文 (尝试 1/3)
+2025-10-30 05:16:02,725 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:16:03,010 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:16:14,310 - INFO - 第 14 篇论文处理成功
+2025-10-30 05:16:17,310 - INFO - 正在处理第 15/16 篇论文
+2025-10-30 05:16:17,310 - INFO - 正在翻译第 15 篇论文 (尝试 1/3)
+2025-10-30 05:16:17,310 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:16:17,609 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:16:30,421 - INFO - 第 15 篇论文处理成功
+2025-10-30 05:16:33,422 - INFO - 正在处理第 16/16 篇论文
+2025-10-30 05:16:33,422 - INFO - 正在翻译第 16 篇论文 (尝试 1/3)
+2025-10-30 05:16:33,422 - INFO - 使用模型: DeepSeek Chat
+2025-10-30 05:16:33,724 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-30 05:16:47,259 - INFO - 第 16 篇论文处理成功
+2025-10-30 05:16:50,260 - INFO - 论文处理统计：总数 16，成功 16，失败 0
+2025-10-30 05:16:52,556 - INFO - 开始分析论文数据，时间范围：2025-10-23 至 2025-10-30
+2025-10-30 05:16:52,576 - INFO - 处理 2025-10-30 的数据：找到 16 篇论文
+2025-10-30 05:16:52,576 - DEBUG - Building prefix dict from the default dictionary ...
+2025-10-30 05:16:53,084 - DEBUG - Dumping model to file cache /tmp/jieba.cache
+2025-10-30 05:16:53,124 - DEBUG - Loading model cost 0.547 seconds.
+2025-10-30 05:16:53,124 - DEBUG - Prefix dict has been built successfully.
+2025-10-30 05:16:53,214 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-10-30 05:16:53,215 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-10-30 05:16:53,218 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-10-30 05:16:53,219 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-10-30 05:16:56,385 - INFO - 统计图表生成完成
+2025-10-30 05:16:56,400 - INFO - 日报已生成：newsletters/2025-10-30_daily_paper.md
