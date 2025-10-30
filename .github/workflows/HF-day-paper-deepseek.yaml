@@ -6,7 +6,7 @@ on:
     types:
       - completed
   schedule:
-    - cron: '0 8 * * 1-5'  # 每周一到周五 UTC 8:00 (北京时间 16:00) 运行
+    - cron: '0 2 * * 2-6'  # 每周一到周五 UTC 8:00 (北京时间 16:00) 运行
   workflow_dispatch:
     inputs:
       date:
@@ -109,7 +109,7 @@ jobs:
         export TZ='Asia/Shanghai'
         
         # 获取当前日期作为默认值
-        DEFAULT_DATE=$(date +'%Y-%m-%d')
+        DEFAULT_DATE=$(date -d "yesterday" +'%Y-%m-%d')
         
         # 如果是手动触发且指定了日期，则使用指定日期，否则使用当前日期
         if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
