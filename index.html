@@ -9,34 +9,72 @@
             max-width: 900px;
             margin: 50px auto;
             padding: 20px;
+            background: #f6f8fa;
         }
-        h1 { color: #333; }
-        .paper-list { list-style: none; padding: 0; }
+        h1 { 
+            color: #333;
+            border-bottom: 3px solid #0366d6;
+            padding-bottom: 10px;
+        }
+        .description {
+            color: #586069;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .paper-list { 
+            list-style: none; 
+            padding: 0; 
+        }
         .paper-item {
-            padding: 15px;
+            padding: 15px 20px;
             margin: 10px 0;
             border-left: 4px solid #0366d6;
-            background: #f6f8fa;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .paper-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
         .paper-item a {
             font-size: 18px;
             color: #0366d6;
             text-decoration: none;
+            display: block;
         }
-        .paper-item a:hover { text-decoration: underline; }
+        .paper-item a:hover { 
+            text-decoration: underline; 
+        }
+        .date-badge {
+            background: #0366d6;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        .loading {
+            text-align: center;
+            color: #586069;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
     <h1>🔥 AI 论文日报</h1>
-    <p>每日精选 Hugging Face Daily Papers，AI 翻译总结</p>
+    <p class="description">每日精选 Hugging Face Daily Papers，AI 翻译总结</p>
     
     <ul class="paper-list" id="paperList">
-        <!-- 这里自动生成日报列表 -->
+        <li class="loading">正在加载日报列表...</li>
     </ul>
     
     <script>
         // 自动生成最近30天的日报链接
         const list = document.getElementById('paperList');
+        list.innerHTML = ''; // 清空加载提示
+        
         for (let i = 0; i < 30; i++) {
             const date = new Date();
             date.setDate(date.getDate() - i);
@@ -45,8 +83,9 @@
             const li = document.createElement('li');
             li.className = 'paper-item';
             li.innerHTML = `
-                <a href="newsletters/${dateStr}.html" target="_blank">
-                    📄 ${dateStr} 日报
+                <a href="newsletters/${dateStr}_daily_paper.html" target="_blank">
+                    <span class="date-badge">${dateStr}</span>
+                    📄 每日论文精选
                 </a>
             `;
             list.appendChild(li);
