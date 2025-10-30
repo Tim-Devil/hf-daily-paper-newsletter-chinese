@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>AI 论文日报</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h1 { color: #333; }
+        .paper-list { list-style: none; padding: 0; }
+        .paper-item {
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #0366d6;
+            background: #f6f8fa;
+        }
+        .paper-item a {
+            font-size: 18px;
+            color: #0366d6;
+            text-decoration: none;
+        }
+        .paper-item a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>🔥 AI 论文日报</h1>
+    <p>每日精选 Hugging Face Daily Papers，AI 翻译总结</p>
+    
+    <ul class="paper-list" id="paperList">
+        <!-- 这里自动生成日报列表 -->
+    </ul>
+    
+    <script>
+        // 自动生成最近30天的日报链接
+        const list = document.getElementById('paperList');
+        for (let i = 0; i < 30; i++) {
+            const date = new Date();
+            date.setDate(date.getDate() - i);
+            const dateStr = date.toISOString().split('T')[0];
+            
+            const li = document.createElement('li');
+            li.className = 'paper-item';
+            li.innerHTML = `
+                <a href="newsletters/${dateStr}.html" target="_blank">
+                    📄 ${dateStr} 日报
+                </a>
+            `;
+            list.appendChild(li);
+        }
+    </script>
+</body>
+</html>
