@@ -2,7 +2,7 @@ name: Paper_metadata_download
 
 on:
   schedule:
-    - cron: '45 7 * * 1-5'  # 每周一到周五 UTC 7:45 (北京时间 15:45) 运行
+    - cron: '0 1 * * 2-6'  # 每周一到周五 UTC 7:45 (北京时间 15:45) 运行
   workflow_dispatch:  # 允许手动触发
     inputs:
       date:
@@ -39,7 +39,7 @@ jobs:
         if [ "${{ github.event.inputs.date }}" != "" ]; then
           echo "date=${{ github.event.inputs.date }}" >> $GITHUB_OUTPUT
         else
-          echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          echo "date=$(date -d "yesterday" +'%Y-%m-%d')" >> $GITHUB_OUTPUT
         fi
         # 立即保存日期，不需要等待检查结果
         echo "${{ steps.set-date.outputs.date }}" > date.txt
