@@ -214,15 +214,15 @@ jobs:
         python newsletter.py --date ${PROCESS_DATE}
         echo "Generation completed"
     
-    - name: Generate TTS
-      if: steps.check_data.outputs.has_data == 'true'
-      env:
-        GITHUB_REPOSITORY: ${{ github.repository }}
-        PROCESS_DATE: ${{ steps.set-date.outputs.date }}
-      run: |
-        echo "Generating TTS..."
-        python tts.py --date ${PROCESS_DATE}
-        echo "TTS generation completed"
+    # - name: Generate TTS
+    #   if: steps.check_data.outputs.has_data == 'true'
+    #   env:
+    #     GITHUB_REPOSITORY: ${{ github.repository }}
+    #     PROCESS_DATE: ${{ steps.set-date.outputs.date }}
+    #   run: |
+    #     echo "Generating TTS..."
+    #     python tts.py --date ${PROCESS_DATE}
+    #     echo "TTS generation completed"
     
     - name: Commit and push if there are changes
       if: steps.check_data.outputs.has_data == 'true'
