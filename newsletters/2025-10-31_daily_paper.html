@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2025-10-31</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2025-10-31 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：29</li>
+<li>热门领域：Transformer, Vision, RL, GPT, LLM</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. 手动解码的终结：迈向真正端到端的语言模型</h3>
+<p><strong>原文标题：</strong> The End of Manual Decoding: Towards Truly End-to-End Language Models</p>
+<p><strong>摘要：</strong>
+当前大语言模型的"端到端"属性实为误称。实践中它们仍依赖于不可微的解码过程，需要人工繁琐调整温度系数和top-p等超参数。本文提出AutoDeco创新架构，通过让模型学习自主控制解码策略，实现真正的"端到端"生成。我们在标准Transformer基础上增设轻量化头部模块，使其能够在每个生成步骤中动态预测上下文相关的温度值与top-p参数，同时输出下一个词元的逻辑值。这种方法将解码过程转化为参数化的词元级操作，使模型在单次前向传播中即可实现自适应的采样策略调控。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26697">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26697">arXiv</a></p>
+<hr />
+<h3>2. Emu3.5：原生多模态模型的世界认知系统</h3>
+<p><strong>原文标题：</strong> Emu3.5: Native Multimodal Models are World Learners</p>
+<p><strong>摘要：</strong>
+本文提出Emu3.5——一种通过原生方式预测视觉与语言跨模态状态演进的大规模多模态世界模型。该模型基于包含超过10万亿标记的视觉语言交织数据集进行端到端预训练，这些数据主要源自互联网视频的连续帧序列及对应文本转录，采用统一的下一标记预测目标。该模型天然支持交织式视觉语言输入，并生成交织式视觉语言输出。通过大规模强化学习后训练，Emu3.5进一步增强了多模态推理与生成能力。为提升推理效率，我们提出离散扩散适配方法（DiDA），将逐标记解码转换为双向并行预测，在保持性能不变的前提下实现单图像推理约20倍加速。实验表明，Emu3.5具备强大的原生多模态能力，包括长程视觉语言生成、任意模态到图像（X2I）生成以及复杂文本图像合成。该模型还展现出可泛化的世界建模能力，支持跨场景任务的时空一致性世界探索与开放世界具身操作。在图像生成与编辑任务中，Emu3.5达到与Gemini 2.5 Flash Image（Nano Banana）相当的性能，并在交织生成任务集上展现更优结果。我们已在https://github.com/baaivision/Emu3.5开源Emu3.5以支持社区研究。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26583">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26583">arXiv</a></p>
+<hr />
+<h3>3. Kimi Linear：一种高表达能力的高效注意力架构</h3>
+<p><strong>原文标题：</strong> Kimi Linear: An Expressive, Efficient Attention Architecture</p>
+<p><strong>摘要：</strong>
+本文提出Kimi Linear混合线性注意力架构，该架构在公平对比条件下首次在多类场景中全面超越完全注意力机制——包括短上下文、长上下文及强化学习的扩展场景。其核心组件Kimi Delta注意力（KDA）是一种具备高表达能力的线性注意力模块，通过细粒度门控机制扩展了门控DeltaNet，从而更有效地利用有限状态的RNN记忆容量。我们独创的分块算法采用对角加低秩（DPLR）转移矩阵的特化变体，在保持与经典Delta规则更高一致性的同时，相较通用DPLR公式显著降低计算量，实现了优异的硬件效率。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26692">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26692">arXiv</a></p>
+<hr />
+<h3>4. 智能体能否征服网络？探索ChatGPT Atlas智能体在网络游戏中的前沿表现</h3>
+<p><strong>原文标题：</strong> Can Agent Conquer Web? Exploring the Frontiers of ChatGPT Atlas Agent in
+  Web Games</p>
+<p><strong>摘要：</strong>
+OpenAI的ChatGPT Atlas模型引入了全新的网络交互能力，使模型能够分析网页内容、处理用户意图，并直接在浏览器中执行光标与键盘输入操作。尽管该模型在信息检索任务中已展现出卓越能力，但其在动态交互环境中的表现仍待深入探索。本研究以浏览器游戏作为测试场景，对Atlas的网络交互能力进行了初步评估，测试对象包括谷歌恐龙跑酷、数独游戏、像素鸟和Stein.world等游戏。我们采用游戏内评分作为量化指标，以评估其在不同任务类型中的表现。研究结果表明，Atlas在数独等逻辑推理任务中表现优异，解题速度显著超越人类基准，但在需要精确时序和动作控制的实时游戏中表现欠佳，往往难以突破初始障碍。这些发现表明，虽然Atlas具备出色的分析处理能力，但在需要实时交互的动态网络环境中仍存在明显局限。本项目网站地址：https://atlas-game-eval.github.io。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26298">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26298">arXiv</a></p>
+<hr />
+<h3>5. 探索扩散模型在机器人控制中的应用条件</h3>
+<p><strong>原文标题：</strong> Exploring Conditions for Diffusion models in Robotic Control</p>
+<p><strong>摘要：</strong>
+尽管预训练的视觉表征显著推动了模仿学习的发展，但这些表征通常在策略学习过程中保持固定，导致其与具体任务无关。在本研究中，我们探索如何利用预训练的文本到图像扩散模型来获取适用于机器人控制的任务自适应视觉表征，而无需对模型本身进行微调。然而我们发现，直接应用文本条件（在其他视觉领域已获成功的策略）在控制任务中收效甚微甚至会产生负面效果。我们将此归因于扩散模型训练数据与机器人控制环境之间的领域差异，进而提出应当采用能够考虑控制任务所需特定动态视觉信息的条件参数。为此，我们提出ORCA框架，该框架引入可学习的任务提示以适应控制环境，同时采用视觉提示来捕捉细粒度的帧级特征。通过新设计的条件参数实现任务自适应表征，我们的方法在多个机器人控制基准测试中达到了最先进的性能水平，显著超越了现有方法。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.15510">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.15510">arXiv</a></p>
+<hr />
+<h3>6. AMO-Bench：大型语言模型在高中数学竞赛中仍面临挑战</h3>
+<p><strong>原文标题：</strong> AMO-Bench: Large Language Models Still Struggle in High School Math
+  Competitions</p>
+<p><strong>摘要：</strong>
+我们提出AMO-Bench——一个具有奥林匹克竞赛级别或更高难度的进阶数学推理基准，包含50道人工设计的题目。现有基准普遍采用高中数学竞赛来评估大型语言模型的数学推理能力，但由于性能饱和现象（如AIME24/25），许多现有数学竞赛对顶尖大型语言模型的评估效能正在减弱。为此，AMO-Bench通过确保所有50道题目满足以下条件来引入更严格的挑战：（1）经专家交叉验证达到国际数学奥林匹克竞赛难度标准；（2）全部为原创题目以避免数据记忆导致的性能泄露。此外，AMO-Bench中每道题目仅需最终答案而非证明过程，支持自动可靠的评估打分。在26个大型语言模型上的实验结果表明，性能最优模型在AMO-Bench上的准确率仅为52.4%，大多数模型得分低于40%。除表现欠佳外，我们进一步分析发现增加测试时计算量会带来显著的规模扩展趋势。这些结果揭示了当前大型语言模型在数学推理方面存在巨大改进空间。我们公开发布AMO-Bench以推动语言模型推理能力的前沿研究。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26768">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26768">arXiv</a></p>
+<hr />
+<h3>7. Surfer 2：新一代跨平台计算机智能体系统</h3>
+<p><strong>原文标题：</strong> Surfer 2: The Next Generation of Cross-Platform Computer Use Agents</p>
+<p><strong>摘要：</strong>
+构建能够泛化应用于网页、桌面及移动环境的智能体仍面临重大挑战，现有系统多依赖特定环境接口，限制了跨平台部署能力。本文提出Surfer 2统一架构，该系统仅通过视觉观察实现操作，在三大环境均达到最先进性能。Surfer 2融合了分层上下文管理、解耦规划与执行机制，以及具备自适应恢复能力的自我验证模块，确保长周期任务的可靠运行。实验表明，本系统在WebVoyager达到97.1%准确率，WebArena 69.6%，OSWorld 60.1%，AndroidWorld 87.1%，无需任务特定微调即超越所有现有系统。经多轮尝试，Surfer 2在所有基准测试中均超越人类表现。这些成果证明：系统化架构设计能显著增强基础模型能力，实现纯视觉交互的通用计算机控制，同时指出需开发新一代视觉语言模型以实现帕累托最优的成本效益。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.19949">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.19949">arXiv</a></p>
+<hr />
+<h3>8. 视频模型是否已具备零样本推理能力？基于MME-CoF基准的实证研究</h3>
+<p><strong>原文标题：</strong> Are Video Models Ready as Zero-Shot Reasoners? An Empirical Study with
+  the MME-CoF Benchmark</p>
+<p><strong>摘要：</strong>
+当前视频生成模型能够产出高保真度、时序连贯的视频内容，表明其可能编码了丰富的世界知识。除真实感合成外，这些模型还展现出表征视觉感知、建模与操作的新兴能力。然而，一个重要问题尚未解决：在具有挑战性的视觉推理场景中，视频模型是否已具备作为零样本推理器的条件？本研究通过实证分析系统探讨该问题，聚焦于主流模型Veo-3。我们从12个维度评估其推理行为，涵盖空间、几何、物理、时序及具身逻辑等领域，系统刻画其优势与失效模式。为规范研究过程，我们构建了MME-CoF评估基准——一个支持对帧序列推理进行深入全面评估的紧凑基准。研究发现：当前视频模型在短时域空间一致性、细粒度语义 grounding 及局部动态连贯性方面展现出有前景的推理模式，但在长时域因果推理、严格几何约束和抽象逻辑方面仍存在局限。总体而言，视频模型尚未成为可靠的独立零样本推理器，但作为专用推理模型的互补视觉引擎展现出令人鼓舞的潜力。项目主页：https://video-cof.github.io</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26802">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26802">arXiv</a></p>
+<hr />
+<h3>9. 可泛化运动生成的探索：数据、模型与评估框架</h3>
+<p><strong>原文标题：</strong> The Quest for Generalizable Motion Generation: Data, Model, and
+  Evaluation</p>
+<p><strong>摘要：</strong>
+尽管三维人体运动生成在标准基准测试中取得显著进展，现有模型在泛化能力方面仍面临根本性瓶颈。相比之下，相邻生成领域（尤以视频生成为代表）在人体行为建模中展现出卓越的泛化性能，这为运动生成领域提供了可迁移的重要启示。基于此观察，我们提出一个综合框架，系统性地将视频生成的知识迁移至运动生成领域，涵盖数据、建模与评估三大支柱。首先，我们推出ViMoGen-228K大规模数据集，包含228,000个高质量运动样本，融合了高精度光学运动捕捉数据、网络视频中的语义标注运动，以及顶尖视频生成模型合成的样本。该数据集同时包含文本-运动对和文本-视频-运动三元组，显著扩展了语义多样性。其次，我们提出基于流匹配的扩散变换器ViMoGen，通过门控多模态条件机制统一运动捕捉数据与视频生成模型的前验知识。为提升效率，我们进一步开发轻量化版本ViMoGen-light，在保持强泛化能力的同时消除对视频生成的依赖。最后，我们建立MBench分层评估基准，支持运动质量、提示符保真度与泛化能力的细粒度评估。大量实验表明，我们的框架在自动评估与人工评估中均显著优于现有方法。相关代码、数据与评估基准将公开发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26794">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26794">arXiv</a></p>
+<hr />
+<h3>10. 监督式强化学习：从专家轨迹到分步推理</h3>
+<p><strong>原文标题：</strong> Supervised Reinforcement Learning: From Expert Trajectories to Step-wise
+  Reasoning</p>
+<p><strong>摘要：</strong>
+大型语言模型在处理需要多步推理的问题时常面临困难。对于小规模开源模型，基于可验证奖励的强化学习在多次尝试后仍难以采样到正确解，而监督微调则容易通过逐词僵化模仿长演示示例导致过拟合。为解决这一问题，我们提出监督式强化学习框架，将问题求解重新定义为生成逻辑"动作"序列的过程。该框架训练模型在执行每个动作前生成内部推理独白，并以分步方式根据模型动作与从监督微调数据集中提取的专家动作之间的相似性提供平滑奖励。这种监督机制即使在所有推演都错误的情况下也能提供更丰富的学习信号，同时鼓励在专家演示引导下进行灵活推理。实验表明，监督式强化学习能使小规模模型学会原本无法通过监督微调或可验证奖励强化学习掌握的复杂问题。此外，在采用可验证奖励强化学习进行精调前，先用监督式强化学习初始化训练，可获得最强的综合性能。除推理基准测试外，监督式强化学习在自主软件工程任务中也展现出色泛化能力，确立了其作为面向推理的大型语言模型的稳健且通用的训练框架地位。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.25992">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.25992">arXiv</a></p>
+<hr />
+<h3>11. 主体性组织时代：利用语言模型实现组织化学习</h3>
+<p><strong>原文标题：</strong> The Era of Agentic Organization: Learning to Organize with Language
+  Models</p>
+<p><strong>摘要：</strong>
+我们展望人工智能的新纪元——主体性组织时代，在这一时代中，智能体通过协同并行工作解决复杂问题，实现超越个体智能的成果。为实现这一愿景，我们引入异步思维作为大语言模型推理的新范式，将内部思考过程组织为可并行执行的结构。具体而言，我们提出一种思维协议：组织者动态分配子任务给工作节点，整合中间知识，最终生成连贯解决方案。更重要的是，该协议中的思维结构可通过强化学习进一步优化。实验表明，相较于并行思维模式，异步思维在数学推理任务中推理延迟降低28%的同时提升了准确率。此外，异步思维能够泛化其习得的异步思考能力，无需额外训练即可有效处理未知任务。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26658">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26658">arXiv</a></p>
+<hr />
+<h3>12. OmniX：从统一全景生成与感知到图形就绪型三维场景</h3>
+<p><strong>原文标题：</strong> OmniX: From Unified Panoramic Generation and Perception to
+  Graphics-Ready 3D Scenes</p>
+<p><strong>摘要：</strong>
+当前构建三维场景主要存在两种主流方式：程序化生成与二维提升技术。其中基于全景的二维提升技术展现出显著潜力，通过利用强大的二维生成先验知识，能够创造出沉浸感强、真实性高且多样化的三维环境。本研究推进该技术以生成适用于基于物理渲染（PBR）、重光照及仿真的图形就绪型三维场景。我们的核心思路是重新定位二维生成模型，使其具备对几何结构、纹理及PBR材质的全景感知能力。与现有侧重外观生成而忽略内在属性感知的二维提升方法不同，我们提出了OmniX——一个通用统一的框架。基于轻量级高效跨模态适配器结构，OmniX将二维生成先验知识复用于全景视觉任务领域，包括全景感知、生成与补全。此外，我们构建了大规模合成全景数据集，包含来自多样化室内外场景的高质量多模态全景数据。大量实验证明我们的模型在全景视觉感知和图形就绪型三维场景生成方面的有效性，为沉浸式物理真实虚拟世界生成开辟了新可能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26800">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26800">arXiv</a></p>
+<hr />
+<h3>13. MIRO：多奖励条件预训练提升文本生成图像的质量与效率</h3>
+<p><strong>原文标题：</strong> MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and
+  efficiency</p>
+<p><strong>摘要：</strong>
+当前文本生成图像模型通过在大型未筛选数据集上进行训练以实现多样化的生成能力，但这种做法与用户偏好存在显著偏差。近期研究专门设计了奖励模型，对生成图像进行后验选择以使其符合特定奖励（通常指用户偏好）。这种丢弃有效数据并仅针对单一奖励进行优化的方式往往会损害生成结果的多样性、语义保真度及训练效率。为替代此类后处理方法，我们提出在训练过程中使模型同时适应多个奖励模型的条件约束，从而让模型直接学习用户偏好。研究表明，该方法不仅显著提升了生成图像的视觉质量，同时大幅加快了训练速度。我们提出的MIRO方法在GenEval组合基准测试和用户偏好评分（PickAScore、ImageReward、HPSv2）中均达到了最先进的性能水平。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.25897">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.25897">arXiv</a></p>
+<hr />
+<h3>14. EHR-R1：面向电子健康记录分析的推理增强型基础语言模型</h3>
+<p><strong>原文标题：</strong> EHR-R1: A Reasoning-Enhanced Foundational Language Model for Electronic
+  Health Record Analysis</p>
+<p><strong>摘要：</strong>
+电子健康记录包含丰富而复杂的信息，其自动化分析对临床决策至关重要。尽管大语言模型在临床工作流程中取得进展，但由于任务覆盖范围有限且缺乏面向电子健康记录的推理能力，其分析电子健康记录的效能仍受制约。本文致力于填补这一空白，具体提出EHR-Ins——一个大规模综合性电子健康记录推理指令数据集，涵盖42个不同电子健康记录任务的30万条高质量推理案例与400万条非推理案例。其核心创新在于采用思维图驱动的框架，实现高质量推理数据的大规模生成。基于此，我们开发出EHR-R1系列推理增强型大语言模型，参数量最高达720亿，专为电子健康记录分析定制。通过包含领域适应、推理增强和强化学习的多阶段训练范式，EHR-R1系统性地掌握了领域知识与多样化推理能力，可实现精准稳健的电子健康记录分析。最后，我们基于MIMIC-IV构建了EHR-Bench新基准，涵盖42项任务，全面评估电子健康记录场景中的推理与预测能力。实验结果表明，EHR-R1持续超越最先进的商业及开源大语言模型（包括DeepSeek-V3和GPT-4o），在MIMIC-Bench上较GPT-4o提升逾30分，在EHRSHOT上实现10%的零样本AUROC提升。EHR-Ins、EHR-R1与EHR-Bench共同为开发更可靠且具临床相关性的电子健康记录分析系统奠定了重要基础。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.25628">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.25628">arXiv</a></p>
+<hr />
+<h3>15. OmniLayout：基于大语言模型的从粗到精学习实现通用文档布局生成</h3>
+<p><strong>原文标题：</strong> OmniLayout: Enabling Coarse-to-Fine Learning with LLMs for Universal
+  Document Layout Generation</p>
+<p><strong>摘要：</strong>
+文档智能技术发展迅猛并日益受到关注。然而当前研究大多集中于文档布局分析，其生成式对应方向——文档布局生成仍待深入探索。主要障碍在于多样化布局数据的稀缺：现有研究主要集中于曼哈顿式结构的学术论文，而报纸、杂志等开放领域文档类型严重缺乏代表性。为弥补这一空白，我们构建了OmniLayout-1M——首个百万量级的多样化文档布局数据集，涵盖六种常见文档类型，包含从多源采集的当代布局样本。针对现有方法在复杂领域表现不佳且难以连贯排列长序列的问题，我们提出了OmniLayout-LLM模型（参数量5亿），采用设计的两阶段从粗到精学习范式：1）通过粗粒度类别定义从OmniLayout-1M学习通用布局原则；2）利用细粒度标注将知识迁移至特定领域。在M^{6}Doc数据集上的大量实验表明，我们的方法在多个领域均取得卓越性能，显著超越现有布局生成专家模型及多个最新通用大语言模型。我们的代码、模型和数据集将公开发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26213">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26213">arXiv</a></p>
+<hr />
+<h3>16. Magentic Marketplace：一个用于研究智能体市场的开源环境</h3>
+<p><strong>原文标题：</strong> Magentic Marketplace: An Open-Source Environment for Studying Agentic
+  Markets</p>
+<p><strong>摘要：</strong>
+随着大语言模型智能体的发展，它们正越来越多地代表用户介导经济决策，从产品发现到交易执行。这类应用虽前景可期，但也引发了关于智能体问责机制与用户价值实现的诸多问题。要解决这些问题，需要深入理解智能体在真实市场环境中的行为模式。然而现有研究大多在受限场景中评估智能体性能，例如单一任务市场（如谈判场景）或结构化的双智能体交互。现实市场存在本质差异：智能体需要处理多样化的经济活动，在由多个行为不透明的智能体构成的大型动态生态系统中进行开放对话协调。为弥补这一差距，我们研究由代表消费者的助手智能体与代表商家的服务智能体构成的双边智能体市场。为安全研究此类交互，我们开发了Magentic-Marketplace——一个支持助手与服务智能体运行的仿真环境。该环境使我们能研究关键市场动态：智能体实现的效用、行为偏差、受操纵脆弱性以及搜索机制如何影响市场结果。实验表明，前沿模型仅能在理想搜索条件下接近最优福利水平。随着规模扩大，性能急剧下降，所有模型均表现出严重的一轮提案偏差，导致响应速度的重要性达到质量因素的10-30倍。这些发现揭示了不同市场条件下行为模式的涌现规律，为设计公平高效的智能体市场提供了重要参考。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.25779">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.25779">arXiv</a></p>
+<hr />
+<h3>17. MedVLSynther：基于生成器-验证器大语言模型从医学文档合成高质量视觉问答数据</h3>
+<p><strong>原文标题：</strong> MedVLSynther: Synthesizing High-Quality Visual Question Answering from
+  Medical Documents with Generator-Verifier LMMs</p>
+<p><strong>摘要：</strong>
+大型多模态模型在解答需要联合推理图像与文本的医学问题方面能力日益增强，然而缺乏大规模、可公开使用的高质量语料库阻碍了通用医学视觉问答系统的训练。本文提出MedVLSynther——一个基于规则指导的生成器-验证器框架，该框架通过关联图表、标题及文内参考文献，直接从开放生物医学文献中合成高质量多选题形式的视觉问答条目。生成器按照机器可校验的JSON规范生成自包含题干及并行互斥的选项；多阶段验证器在接收数据前执行核心校验（自包含性、单一正确答案、临床有效性、图文一致性），授予细粒度正向评分，并对常见错误模式进行扣分处理。将该流程应用于PubMed Central数据库后得到MedSynVQA：包含13,087道已审核问题，覆盖14,803张图像，涉及13种影像模态和28个解剖区域。使用可验证奖励通过强化学习训练开放权重大型多模态模型，在六项医学视觉问答基准测试中准确率全面提升，3B和7B模型分别达到55.85和58.15的平均准确率，其中VQA-RAD最高达77.57，PathVQA达67.76，超越现有强医学大型多模态模型。消融实验验证生成与验证环节均不可或缺，更多已验证数据持续带来提升，针对性污染分析未检测到评估集泄露。通过完全基于开放文献和开放权重模型运行，MedVLSynther为可扩展的医学视觉问答训练数据提供了一条可审计、可复现且保护隐私的技术路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.25867">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.25867">arXiv</a></p>
+<hr />
+<h3>18. 远程劳动指数：衡量人工智能对远程工作的自动化程度</h3>
+<p><strong>原文标题：</strong> Remote Labor Index: Measuring AI Automation of Remote Work</p>
+<p><strong>摘要：</strong>
+人工智能在知识与推理的研究型基准测试中进展迅速，但这些成果如何转化为经济价值与自动化效能仍不明确。为此我们提出远程劳动指数（RLI）——一个广泛覆盖多领域的基准体系，包含旨在评估实际场景中端到端智能体性能的具经济价值的现实项目。人工智能体在RLI上的表现接近基准下限，表现最佳的智能体仅实现2.5%的自动化率。这些研究结果有助于将人工智能自动化的讨论建立在实证依据之上，为追踪人工智能影响设立共同基准，并使利益相关者能够主动应对人工智能驱动的劳动力自动化变革。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26787">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26787">arXiv</a></p>
+<hr />
+<h3>19. 通过头尾数据重平衡抑制大视觉语言模型自改进中的马太效应</h3>
+<p><strong>原文标题：</strong> Counteracting Matthew Effect in Self-Improvement of LVLMs through
+  Head-Tail Re-balancing</p>
+<p><strong>摘要：</strong>
+自改进已成为提升大视觉语言模型推理能力的主流范式，该范式通过模型迭代探索并学习成功推理轨迹来实现进步。然而我们发现这一过程中存在关键问题：模型擅长为简单查询（即头部数据）生成高质量轨迹，却难以处理复杂查询（即尾部数据）。这种不平衡优化导致模型偏重简单推理技能，同时阻碍其处理复杂推理任务的能力。随着迭代进行，这种失衡现象日益显著——我们称之为“马太效应”——最终制约模型的持续改进并导致性能瓶颈。为应对这一挑战，我们从分布重塑与轨迹重采样两个维度提出四种高效策略，在探索式学习的自改进过程中实现头尾数据重平衡。在Qwen2-VL-7B-Instruct和InternVL2.5-4B模型上的视觉推理任务实验表明，我们的方法能持续提升视觉推理能力，相较原始自改进范式平均提升3.86个性能点。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26474">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26474">arXiv</a></p>
+<hr />
+<h3>20. CRAG-MM：多模态多轮综合检索增强生成基准</h3>
+<p><strong>原文标题：</strong> CRAG-MM: Multi-modal Multi-turn Comprehensive RAG Benchmark</p>
+<p><strong>摘要：</strong>
+以智能眼镜为代表的可穿戴设备正在改变人们与周围环境的交互方式，使用户能够实时获取视野中实体的相关信息。多模态检索增强生成（MM-RAG）技术对此类查询具有重要支撑作用，但目前该领域仍缺乏系统性基准，尤其针对可穿戴场景。为此，我们提出CRAG-MM——面向多模态多轮对话的综合RAG基准。该基准包含13个领域的6,500组（图像、问题、答案）三元组及2,000组基于视觉的多轮对话，其中6,200张具身视角图像专为模拟可穿戴设备采集场景设计。我们通过五类图像质量问题、六种提问类型、差异化实体热度、动态信息变化及多轮对话深度等维度精心构建问题集，以反映真实场景的复杂性。基准设置三大任务：单源增强、多源增强与多轮对话，每个任务均配备关联检索库及支持图像-知识图谱检索与网页检索的API接口。评估数据显示，传统RAG方法在单轮与多轮问答中的真实性指标仅达32%与43%，而业界前沿方案的性能表现相近（32%/45%），表明该领域存在显著提升空间。本基准已成为KDD Cup 2025竞赛平台，吸引约1,000名参赛者提交5,000次方案，优胜方案较基线提升28%，彰显其对领域发展的早期推动作用。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26160">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26160">arXiv</a></p>
+<hr />
+<h3>21. FullPart：全分辨率生成每个三维部件</h3>
+<p><strong>原文标题：</strong> FullPart: Generating each 3D Part at Full Resolution</p>
+<p><strong>摘要：</strong>
+基于部件的三维生成技术具有广泛的应用前景。现有部件生成方法主要存在两类局限：一类采用隐式向量集令牌表示部件，往往难以充分刻画几何细节；另一类采用显式体素表征但共享全局体素网格，导致小型部件分配体素过少而生成质量下降。本文提出FullPart这一融合隐式与显式范式的新型框架。该框架首先通过隐式边界框向量集扩散过程推导包围盒布局——由于边界框令牌仅包含基础几何信息，该任务特别适合隐式扩散处理；随后在每个部件独立的固定全分辨率体素网格中生成细节化部件。相较于共享低分辨率全局空间的方法，本方案使每个部件（包括小型部件）均能以全分辨率生成，从而实现复杂几何细节的合成。针对不同尺寸部件间信息交互时的错位问题，我们进一步提出中心点编码策略以保持全局一致性。此外，为解决可靠部件数据稀缺的难题，我们构建了迄今最大规模的人工标注三维部件数据集PartVerse-XL，包含4万个三维对象与32万个部件。大量实验表明，FullPart在三维部件生成任务上达到了最先进的性能水平。我们将公开全部代码、数据与模型，以促进三维部件生成领域的后续研究。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26140">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26140">arXiv</a></p>
+<hr />
+<h3>22. PORTool：基于奖励树结构的工具调用大语言模型训练方法</h3>
+<p><strong>原文标题：</strong> PORTool: Tool-Use LLM Training with Rewarded Tree</p>
+<p><strong>摘要：</strong>
+当前工具调用大语言模型基于静态数据集进行训练，使其能够与外部工具交互并执行多步骤、工具集成的推理过程，从而生成工具调用轨迹。然而，这些模型仅模仿通用工具调用流程中查询的解决方式，未能探索可能的解决方案，在动态演变的工具调用环境中表现出性能局限。本研究提出PORTool——一种强化学习方法，通过激励工具调用大语言模型探索产生正确答案的多样化轨迹。具体而言，该方法首先生成针对给定查询的多个执行路径，其中部分路径共享初始工具调用步骤，从而形成树状结构。随后基于每个步骤生成正确答案与成功完成工具调用的能力分配奖励：跨轨迹共享步骤获得相同奖励，而同分支下的不同步骤获得差异化奖励。最后，这些逐步骤奖励被用于计算分支相对优势值，并与轨迹相对优势值融合，以训练工具调用大语言模型。实验采用17种工具处理用户查询，涵盖时效性与非时效性主题。通过消融研究系统验证了逐步骤奖励的必要性及设计鲁棒性。进一步将PORTool与其他训练方法对比，在最终准确率和工具调用步骤数量方面均展现出显著提升。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26020">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26020">arXiv</a></p>
+<hr />
+<h3>23. EnzyControl：为酶骨架生成添加功能性与底物特异性调控</h3>
+<p><strong>原文标题：</strong> EnzyControl: Adding Functional and Substrate-Specific Control for Enzyme
+  Backbone Generation</p>
+<p><strong>摘要：</strong>
+设计具有底物特异性功能的酶骨架是计算蛋白质工程领域的关键挑战。当前生成模型在蛋白质设计中表现出色，但在结合数据、底物特异性调控及从头生成酶骨架的灵活性方面存在局限。为此，我们首先构建了EnzyBind数据集，该数据集从PDBbind中精选出11,100个经实验验证的酶-底物对。在此基础上，我们提出EnzyControl方法，实现酶骨架生成过程中的功能性与底物特异性调控。该方法通过从精选酶-底物数据中自动提取的MSA注释催化位点及其对应底物作为条件，生成酶骨架结构。EnzyControl的核心是EnzyAdapter模块——一个集成于预训练基序支架模型中的轻量化可插拔组件，使模型具备底物识别能力。采用两阶段训练范式进一步优化模型生成精确功能性酶结构的能力。实验表明，在EnzyBind和EnzyBench基准测试中，我们的EnzyControl在结构与功能指标上均取得最佳性能，其中可设计性提升13%，催化效率较基线模型提高13%。代码已发布于https://github.com/Vecteur-libre/EnzyControl。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.25132">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.25132">arXiv</a></p>
+<hr />
+<h3>24. CLASS-IT：面向BabyLMs的对话式与讲座对齐小规模指令微调框架</h3>
+<p><strong>原文标题：</strong> CLASS-IT: Conversational and Lecture-Aligned Small-Scale Instruction
+  Tuning for BabyLMs</p>
+<p><strong>摘要：</strong>
+本研究探讨小规模语言模型能否从指令微调中获益。我们分别采用融合式与序列课程式两种策略，对比分析了对话型与问答型指令微调数据集在1亿/1.4亿参数解码器模型上的表现。评估涵盖精调（SuperGLUE）与零样本（BLiMP/EWoK/WUGs/实体追踪/心理语言学关联）双重场景。实验结果表明：指令微调在精调场景中能产生持续但有限的性能提升，其中序列课程式训练优于数据融合策略；然而这些改进无法稳定迁移至零样本任务，揭示了交互导向适应与广义语言泛化之间的权衡关系。这些发现既印证了将人类启发式学习策略应用于低资源语言模型的潜力，也凸显了其局限性，为在生态化训练约束下通过混合式课程学习方法增强模型泛化能力指明了方向。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.25364">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.25364">arXiv</a></p>
+<hr />
+<h3>25. CityRiSE：基于强化学习的视觉语言模型城市社会经济地位推理框架</h3>
+<p><strong>原文标题：</strong> CityRiSE: Reasoning Urban Socio-Economic Status in Vision-Language
+  Models via Reinforcement Learning</p>
+<p><strong>摘要：</strong>
+利用街景图像和卫星影像等公开可获取的大规模网络数据，城市社会经济感知对于实现全球可持续发展目标具有至关重要的意义。随着大规模视觉语言模型（LVLMs）的出现，通过将其视为多模态感知与理解问题，为解决这一任务创造了新的机遇。然而，近期研究表明，LVLMs在基于视觉数据实现准确且可解释的社会经济预测方面仍存在困难。为突破这些限制并充分释放LVLMs的潜力，我们提出CityRiSE——一种通过纯强化学习（RL）在LVLMs中实现城市社会经济地位推理的创新框架。通过精心构建的多模态数据和可验证的奖励机制设计，我们的方法引导LVLM聚焦于具有语义意义的视觉线索，实现面向通用社会经济预测的结构化目标导向推理。实验表明，具有涌现推理能力的CityRiSE显著优于现有基线模型，在预测精度和跨城市泛化能力方面均实现提升，特别是在未见过的城市和未接触过的指标预测任务中表现突出。本研究彰显了强化学习与LVLMs相结合在可解释通用型城市社会经济感知领域的应用前景。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.22282">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.22282">arXiv</a></p>
+<hr />
+<h3>26. 面向电子商务的小型语言模型优化性能权衡研究</h3>
+<p><strong>原文标题：</strong> Performance Trade-offs of Optimizing Small Language Models for
+  E-Commerce</p>
+<p><strong>摘要：</strong>
+大语言模型在自然语言理解与生成任务中展现出顶尖性能。然而，在电子商务等专业领域部署主流商业模型时，常受限于高计算成本、延迟问题及运营开支。本文探讨了小型开放权重模型作为资源高效替代方案的可行性。我们提出了一套针对十亿参数规模Llama 3.2模型进行多语言电商意图识别优化的方法体系。该模型通过量化低秩自适应技术，在模拟真实用户查询的合成数据集上完成微调，继而采用训练后量化方案分别生成GPU优化（GPTQ）与CPU优化（GGUF）版本。实验结果表明：专用化的十亿参数模型达到99%准确率，与规模显著更大的GPT-4.1模型性能持平。深度性能分析揭示了关键硬件依赖权衡：4位GPTQ虽降低41%显存占用，但在旧版GPU架构（英伟达T4）上因反量化开销导致推理速度反而降低82%；相较之下，CPU环境运行的GGUF格式相较FP16基线实现了18倍推理吞吐量提升与超90%内存占用削减。我们得出结论：经过恰当优化的开放权重小型模型不仅是可行的领域专用替代方案，更是更优选择，能够以极低计算成本实现顶尖精度。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.21970">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.21970">arXiv</a></p>
+<hr />
+<h3>27. L²M³OF：面向金属有机框架的大语言多模态模型</h3>
+<p><strong>原文标题：</strong> L^2M^3OF: A Large Language Multimodal Model for Metal-Organic Frameworks</p>
+<p><strong>摘要：</strong>
+大语言模型在多样化自然语言任务中展现出卓越的推理能力，但在科学发现领域的可比性突破仍较为有限，这源于理解复杂物理现象需要远超纯语言范畴的多维度表征。金属有机框架材料的设计即为典型例证——这类对碳捕集、储氢等重要应用至关重要的功能材料，因其存在海量可能的三维原子排列方式及严格的配位几何与拓扑网络规则，难以通过LLMs可解读的语言化表征来驾驭其庞大复杂的设计空间。尽管LLM辅助设计在简单材料体系中已取得早期成果，MOF设计仍高度依赖人类隐性经验，这些知识鲜少以纯文本形式记载。为突破此限制，我们提出首个面向MOFs的多模态大语言模型L²M³OF。该模型通过晶体表征学习与语言理解相融合，实现了结构、文本与知识模态的联合处理。L²M³OF采用预训练晶体编码器与轻量化投影层，将结构信息压缩至令牌空间，从而实现与语言指令的高效对齐。为促进训练与评估，我们构建了晶体材料的结构-性质-知识数据库，并以GPT-5、Gemini-2.5-Pro和DeepSeek-R1等顶尖闭源LLMs为基准进行性能对比。实验表明，在参数量大为减少的情况下，L²M³OF在性质预测与知识生成任务中仍显著优于主流文本型闭源LLMs。这些成果凸显了多模态方法在多孔材料认知中的关键价值，确立了L²M³OF作为新一代材料发现人工智能系统的基础地位。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.20976">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.20976">arXiv</a></p>
+<hr />
+<h3>28. ChartAB：图表定位与密集对齐基准测试系统</h3>
+<p><strong>原文标题：</strong> ChartAB: A Benchmark for Chart Grounding &amp; Dense Alignment</p>
+<p><strong>摘要：</strong>
+图表在可视化呈现、逻辑推理、数据分析和人类思想交流中发挥着重要作用。然而，现有的视觉语言模型在细节感知方面仍存在不足，难以从图表中提取细粒度结构。这种图表定位能力的局限也制约了模型在多图表对比和推理方面的表现。本文提出创新的"ChartAlign基准测试系统（ChartAB）"，通过涵盖不同类型和复杂度的图表，对视觉语言模型在表格数据提取、可视化元素定位和多重属性识别等图表定位任务中进行全面评估。我们设计了专用JSON模板以实现针对各项定位任务的定制化评估指标计算。通过引入新型两阶段推理机制，该基准系统能进一步评估视觉语言模型在跨图表元素/属性对齐与比较方面的能力。基于对多个前沿视觉语言模型的评估分析，我们揭示了其在图表理解任务中存在的感知偏差、能力缺陷、鲁棒性不足和幻觉现象等新发现。这些研究结果不仅凸显了不同视觉语言模型在图表理解任务中存在的细粒度差异，更为当前模型指明了需要重点加强的能力维度。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26781">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26781">arXiv</a></p>
+<hr />
+<h3>29. POWSM：语音开放式耳语风格语音基础模型</h3>
+<p><strong>原文标题：</strong> POWSM: A Phonetic Open Whisper-Style Speech Foundation Model</p>
+<p><strong>摘要：</strong>
+近期口语处理领域的突破性进展显著推动了语音任务的发展，例如自动语音识别（ASR）、音素识别（PR）、字形到音素转换（G2P）以及音素到字形转换（P2G）。尽管这些任务在概念上具有相似性，但现有研究大多孤立进行，分别依赖特定任务架构与专用数据集。本文提出POWSM（语音开放式耳语风格语音模型），这是首个能够联合执行多种音素相关任务的统一框架。该模型实现了音频、文本（字形）与音素间的无缝转换，为通用化与低资源语音处理开辟了新路径。实验表明，本模型在保持相似参数量级的前提下，其性能超越或匹配专用音素识别模型（Wav2Vec2Phoneme与ZIPA），同时联合支持G2P、P2G与ASR任务。我们已公开训练数据、代码与模型，以促进开放科学发展。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.24992">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.24992">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2025-10-31_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
