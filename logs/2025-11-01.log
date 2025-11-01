@@ -158,3 +158,153 @@
 2025-11-01 02:53:05,143 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 2025-11-01 02:53:08,314 - INFO - 统计图表生成完成
 2025-11-01 02:53:08,336 - INFO - 日报已生成：newsletters/2025-10-31_daily_paper.md
+2025-11-01 03:12:04,052 - INFO - 正在处理 2025-10-31 的论文数据
+2025-11-01 03:12:04,053 - INFO - 读取到 29 篇论文数据
+2025-11-01 03:12:04,054 - INFO - 正在处理第 1/29 篇论文
+2025-11-01 03:12:04,054 - INFO - 正在翻译第 1 篇论文 (尝试 1/3)
+2025-11-01 03:12:04,054 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:12:04,638 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:12:15,060 - INFO - 第 1 篇论文处理成功
+2025-11-01 03:12:18,060 - INFO - 正在处理第 2/29 篇论文
+2025-11-01 03:12:18,061 - INFO - 正在翻译第 2 篇论文 (尝试 1/3)
+2025-11-01 03:12:18,061 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:12:18,355 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:12:29,572 - INFO - 第 2 篇论文处理成功
+2025-11-01 03:12:32,572 - INFO - 正在处理第 3/29 篇论文
+2025-11-01 03:12:32,572 - INFO - 正在翻译第 3 篇论文 (尝试 1/3)
+2025-11-01 03:12:32,572 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:12:32,855 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:12:44,814 - INFO - 第 3 篇论文处理成功
+2025-11-01 03:12:47,815 - INFO - 正在处理第 4/29 篇论文
+2025-11-01 03:12:47,815 - INFO - 正在翻译第 4 篇论文 (尝试 1/3)
+2025-11-01 03:12:47,815 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:12:48,107 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:12:56,836 - INFO - 第 4 篇论文处理成功
+2025-11-01 03:12:59,837 - INFO - 正在处理第 5/29 篇论文
+2025-11-01 03:12:59,837 - INFO - 正在翻译第 5 篇论文 (尝试 1/3)
+2025-11-01 03:12:59,837 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:13:00,115 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:13:08,590 - INFO - 第 5 篇论文处理成功
+2025-11-01 03:13:11,590 - INFO - 正在处理第 6/29 篇论文
+2025-11-01 03:13:11,590 - INFO - 正在翻译第 6 篇论文 (尝试 1/3)
+2025-11-01 03:13:11,591 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:13:11,874 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:13:22,593 - INFO - 第 6 篇论文处理成功
+2025-11-01 03:13:25,593 - INFO - 正在处理第 7/29 篇论文
+2025-11-01 03:13:25,593 - INFO - 正在翻译第 7 篇论文 (尝试 1/3)
+2025-11-01 03:13:25,593 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:13:25,875 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:13:34,528 - INFO - 第 7 篇论文处理成功
+2025-11-01 03:13:37,528 - INFO - 正在处理第 8/29 篇论文
+2025-11-01 03:13:37,528 - INFO - 正在翻译第 8 篇论文 (尝试 1/3)
+2025-11-01 03:13:37,528 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:13:37,840 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:13:48,478 - INFO - 第 8 篇论文处理成功
+2025-11-01 03:13:51,478 - INFO - 正在处理第 9/29 篇论文
+2025-11-01 03:13:51,478 - INFO - 正在翻译第 9 篇论文 (尝试 1/3)
+2025-11-01 03:13:51,479 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:13:51,764 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:14:03,850 - INFO - 第 9 篇论文处理成功
+2025-11-01 03:14:06,851 - INFO - 正在处理第 10/29 篇论文
+2025-11-01 03:14:06,851 - INFO - 正在翻译第 10 篇论文 (尝试 1/3)
+2025-11-01 03:14:06,851 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:14:07,141 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:14:17,427 - INFO - 第 10 篇论文处理成功
+2025-11-01 03:14:20,427 - INFO - 正在处理第 11/29 篇论文
+2025-11-01 03:14:20,427 - INFO - 正在翻译第 11 篇论文 (尝试 1/3)
+2025-11-01 03:14:20,428 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:14:20,709 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:14:28,346 - INFO - 第 11 篇论文处理成功
+2025-11-01 03:14:31,346 - INFO - 正在处理第 12/29 篇论文
+2025-11-01 03:14:31,346 - INFO - 正在翻译第 12 篇论文 (尝试 1/3)
+2025-11-01 03:14:31,347 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:14:31,673 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:14:41,741 - INFO - 第 12 篇论文处理成功
+2025-11-01 03:14:44,741 - INFO - 正在处理第 13/29 篇论文
+2025-11-01 03:14:44,741 - INFO - 正在翻译第 13 篇论文 (尝试 1/3)
+2025-11-01 03:14:44,742 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:14:45,039 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:14:52,936 - INFO - 第 13 篇论文处理成功
+2025-11-01 03:14:55,936 - INFO - 正在处理第 14/29 篇论文
+2025-11-01 03:14:55,936 - INFO - 正在翻译第 14 篇论文 (尝试 1/3)
+2025-11-01 03:14:55,936 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:14:56,210 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:15:09,598 - INFO - 第 14 篇论文处理成功
+2025-11-01 03:15:12,599 - INFO - 正在处理第 15/29 篇论文
+2025-11-01 03:15:12,599 - INFO - 正在翻译第 15 篇论文 (尝试 1/3)
+2025-11-01 03:15:12,599 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:15:12,881 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:15:23,392 - INFO - 第 15 篇论文处理成功
+2025-11-01 03:15:26,392 - INFO - 正在处理第 16/29 篇论文
+2025-11-01 03:15:26,392 - INFO - 正在翻译第 16 篇论文 (尝试 1/3)
+2025-11-01 03:15:26,392 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:15:26,704 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:15:38,371 - INFO - 第 16 篇论文处理成功
+2025-11-01 03:15:41,371 - INFO - 正在处理第 17/29 篇论文
+2025-11-01 03:15:41,371 - INFO - 正在翻译第 17 篇论文 (尝试 1/3)
+2025-11-01 03:15:41,371 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:15:41,655 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:15:55,893 - INFO - 第 17 篇论文处理成功
+2025-11-01 03:15:58,894 - INFO - 正在处理第 18/29 篇论文
+2025-11-01 03:15:58,894 - INFO - 正在翻译第 18 篇论文 (尝试 1/3)
+2025-11-01 03:15:58,894 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:15:59,182 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:16:05,733 - INFO - 第 18 篇论文处理成功
+2025-11-01 03:16:08,733 - INFO - 正在处理第 19/29 篇论文
+2025-11-01 03:16:08,733 - INFO - 正在翻译第 19 篇论文 (尝试 1/3)
+2025-11-01 03:16:08,733 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:16:09,075 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:16:18,355 - INFO - 第 19 篇论文处理成功
+2025-11-01 03:16:21,355 - INFO - 正在处理第 20/29 篇论文
+2025-11-01 03:16:21,355 - INFO - 正在翻译第 20 篇论文 (尝试 1/3)
+2025-11-01 03:16:21,355 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:16:21,642 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:16:34,976 - INFO - 第 20 篇论文处理成功
+2025-11-01 03:16:37,977 - INFO - 正在处理第 21/29 篇论文
+2025-11-01 03:16:37,977 - INFO - 正在翻译第 21 篇论文 (尝试 1/3)
+2025-11-01 03:16:37,977 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:16:38,294 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:16:48,848 - INFO - 第 21 篇论文处理成功
+2025-11-01 03:16:51,848 - INFO - 正在处理第 22/29 篇论文
+2025-11-01 03:16:51,848 - INFO - 正在翻译第 22 篇论文 (尝试 1/3)
+2025-11-01 03:16:51,848 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:16:52,125 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:17:02,694 - INFO - 第 22 篇论文处理成功
+2025-11-01 03:17:05,694 - INFO - 正在处理第 23/29 篇论文
+2025-11-01 03:17:05,695 - INFO - 正在翻译第 23 篇论文 (尝试 1/3)
+2025-11-01 03:17:05,695 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:17:05,969 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:17:16,336 - INFO - 第 23 篇论文处理成功
+2025-11-01 03:17:19,336 - INFO - 正在处理第 24/29 篇论文
+2025-11-01 03:17:19,337 - INFO - 正在翻译第 24 篇论文 (尝试 1/3)
+2025-11-01 03:17:19,337 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:17:19,634 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:17:28,419 - INFO - 第 24 篇论文处理成功
+2025-11-01 03:17:31,419 - INFO - 正在处理第 25/29 篇论文
+2025-11-01 03:17:31,419 - INFO - 正在翻译第 25 篇论文 (尝试 1/3)
+2025-11-01 03:17:31,419 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:17:31,705 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:17:41,569 - INFO - 第 25 篇论文处理成功
+2025-11-01 03:17:44,569 - INFO - 正在处理第 26/29 篇论文
+2025-11-01 03:17:44,569 - INFO - 正在翻译第 26 篇论文 (尝试 1/3)
+2025-11-01 03:17:44,569 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:17:44,852 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:17:55,157 - INFO - 第 26 篇论文处理成功
+2025-11-01 03:17:58,157 - INFO - 正在处理第 27/29 篇论文
+2025-11-01 03:17:58,157 - INFO - 正在翻译第 27 篇论文 (尝试 1/3)
+2025-11-01 03:17:58,157 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:17:58,515 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:18:11,805 - INFO - 第 27 篇论文处理成功
+2025-11-01 03:18:14,806 - INFO - 正在处理第 28/29 篇论文
+2025-11-01 03:18:14,806 - INFO - 正在翻译第 28 篇论文 (尝试 1/3)
+2025-11-01 03:18:14,806 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:18:15,094 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:18:24,074 - INFO - 第 28 篇论文处理成功
+2025-11-01 03:18:27,074 - INFO - 正在处理第 29/29 篇论文
+2025-11-01 03:18:27,074 - INFO - 正在翻译第 29 篇论文 (尝试 1/3)
+2025-11-01 03:18:27,075 - INFO - 使用模型: DeepSeek Chat
+2025-11-01 03:18:27,390 - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-01 03:18:36,695 - INFO - 第 29 篇论文处理成功
+2025-11-01 03:18:39,695 - INFO - 论文处理统计：总数 29，成功 29，失败 0
+2025-11-01 03:18:43,374 - INFO - 开始分析论文数据，时间范围：2025-10-25 至 2025-11-01
+2025-11-01 03:18:43,416 - INFO - 日报已生成：newsletters/2025-10-31_daily_paper.md
